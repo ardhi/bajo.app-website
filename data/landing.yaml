@@ -1,0 +1,97 @@
+# Hero
+hero:
+  enable: true
+  weight: 10
+  template: hero
+
+  backgroundImage:
+    path: "images/templates/hero"
+    filename:
+      desktop: "gradient-desktop.webp"
+      mobile: "gradient-mobile.webp"
+
+  badge:
+    text: v2.0.x
+    color: primary # primary, secondary, success, danger, warning, info, light, dark
+    pill: false # boolean
+    soft: true # boolean
+
+  title: Bajo Framework
+  subtitle: The ultimate framework for whipping up a massive app in no time
+
+  image:
+    path: "img" # path to image under configured assets directory. default 'images'
+    filename: "logo.png" # filename of your hero image (including file extension)
+    alt: "Lotus Docs Screenshot" # Optional but recommended
+    boxShadow: false # default 'false' (excludes .svg images)
+    rounded: false # round the image corners? default 'false' (excludes .svg images)
+
+  ctaButton:
+    icon: rocket_launch
+    btnText: "Getting Started"
+    url: "/docs/getting-started"
+  cta2Button:
+    icon: construction
+    btnText: API
+    url: https://ardhi.github.io/bajo
+
+  info: "**Open Source** MIT Licensed"
+
+featuredLink:
+  enable: true
+  weight: 15
+  template: featured link
+  title: Sub Framework
+  col: 3
+  items:
+    - title: Dobo DBMS
+      image: https://ardhi.github.io/dobo/static/logo.png
+      link: https://dobo.bajo.app/
+    - title: Waibu Web Framework
+      image: https://ardhi.github.io/waibu/static/logo.png
+      link: https://waibu.bajo.app/
+    - title: Masohi Messaging
+      image: https://ardhi.github.io/masohi/static/logo.png
+      link: https://masohi.bajo.app/
+    - title: Sumba Biz Suite
+      image: https://ardhi.github.io/sumba/static/logo.png
+      link: https://sumba.bajo.app/
+featureGrid:
+  enable: true
+  weight: 20
+  template: feature grid
+
+  title: Features
+  #subtitle: Esse commodo nisi commodo exercitation eu esse do sint. Ipsum mollit laboris amet ullamco aliquip fugiat qui irure labore. Lorem anim dolor est culpa. In est aute duis pariatur. Laboris consectetur culpa quis esse occaecat tempor labore fugiat magna. Amet pariatur dolor nisi ut minim incididunt. Sit commodo sit culpa qui anim nisi sit laboris.
+
+  items:
+    - title: Universal Framework
+      icon: stacks
+      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+    - title: Extendable
+      icon: brick
+      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+    - title: Configurable
+      icon: settings
+      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+    - title: Builtin Logger
+      icon: monitor_heart
+      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+    - title: Hook System
+      icon: webhook
+      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+    - title: I18N Support
+      icon: language
+      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+    - title: ES6 Modules
+      icon: speed
+      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+    - title: MIT License
+      icon: license
+      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+    - title: Rich Ecosystem
+      icon: hub
+      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+
+imageCompare:
+  enable: false
