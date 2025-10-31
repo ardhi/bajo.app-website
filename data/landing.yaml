@@ -37,6 +37,28 @@ hero:
 
   info: "**Open Source** MIT Licensed"
 
+imageLauncher:
+  enable: true
+  weight: 15
+  template: image launcher
+  bgColor: bg-primary
+  col: 4
+
+  items:
+    - imageAlt: Dobo DBMS
+      image: https://ardhi.github.io/dobo/static/logo.png
+      href: https://dobo.bajo.app/
+    - imageAlt: Waibu Web Framework
+      image: https://ardhi.github.io/waibu/static/logo.png
+      href: https://waibu.bajo.app/
+    - imageAlt: Masohi Messaging
+      image: https://ardhi.github.io/masohi/static/logo.png
+      href: https://masohi.bajo.app/
+    - imageAlt: Sumba Biz Suite
+      image: https://ardhi.github.io/sumba/static/logo.png
+      href: https://sumba.bajo.app/
+
+
 #featuredLink:
 #  enable: true
 #  weight: 15
@@ -68,31 +90,58 @@ featureGrid:
   items:
     - title: Universal Framework
       icon: stacks
-      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+      description: "One framework to rule them all: CLI application, web server, messaging, you named it!"
     - title: Extendable
       icon: brick
-      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+      description: "Think of it like LEGO bricks: pick only the necessary plugins, configure them to your need, done!"
     - title: Configurable
       icon: settings
-      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+      description: "It supports JSON, YAML, and TOML file formats, as well as dotenv files, program switches, and modes (e.g., dev/prod)"
     - title: Builtin Logger
       icon: monitor_heart
-      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+      description: "A beautiful logger: concise, fast, and colorful, supporting all common levels (TRACE, DEBUG, INFO, WARN, ERROR, etc.)"
     - title: Hook System
       icon: webhook
-      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+      description: "Inject your own codes right before or after execution blocks. Place your injection points anywhere in your codes!"
     - title: I18N Support
       icon: language
-      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+      description: "Full internationalization support, including multi-language capabilities, date/time & number formats"
     - title: ES6 Modules
       icon: speed
-      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+      description: "Everything is built as ES6 standard modules, featuring clear encapsulation, scoping, and support for both static and dynamic imports"
     - title: MIT License
       icon: license
-      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+      description: "Anyone can use, modify, and distribute the software for any purpose, including commercial use!"
     - title: Rich Ecosystem
       icon: hub
-      description: Et commodo irure incididunt qui veniam ut mollit laboris minim reprehenderit consequat irure amet id.
+      description: "There are tons of ready-to-use plugins available to enrich your application, and new ones keep arriving!"
 
 imageCompare:
   enable: false
+
+singleQuote:
+  enable: true
+  template: single quote
+  weight: 25
+  imageSrc: "/img/dex.png"
+  name: Dextronomix
+  title: Indie Game Developer, Sydney AU
+  quote: |
+    "This is the most fun framework I've ever used; it's easy to learn  
+    and has saved me so much work thanks to its plethora of plugins!"
+
+statGrid:
+  enable: true
+  weight: 30
+  template: stat grid
+  col: 3
+  separator: true
+
+  items:
+    - title: 4
+      subtitle: Sub-frameworks  
+    - title: 50+
+      subtitle: Ready-to-use Plugins
+    - title: ∞
+      subtitle: Possibility
+
