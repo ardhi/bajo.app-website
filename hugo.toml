@@ -15,7 +15,7 @@ publishDir = './docs'
         disable = false
 [params]
     [params.social]
-        github = "ardhi"
+        github = "ardhi/bajo"
     [params.docs]
         title = "Bajo Documentations"
         darkMode = true
