@@ -2,21 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/docs/example-page/</loc>
-    <lastmod>2023-05-03T22:37:22+01:00</lastmod>
+    <loc>https://bajo.app/docs/getting-started/</loc>
+    <lastmod>2025-11-01T06:35:52+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2023-05-03T22:37:22+01:00</lastmod>
+    <loc>https://bajo.app/docs/user-guide/</loc>
+    <lastmod>2025-11-01T06:59:09+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/beginners/</loc>
-    <lastmod>2023-05-03T22:37:22+01:00</lastmod>
+    <loc>https://bajo.app/docs/user-guide/overview/definition/</loc>
+    <lastmod>2025-11-01T08:52:03+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/docs/</loc>
-    <lastmod>2023-05-03T22:37:22+01:00</lastmod>
+    <loc>https://bajo.app/docs/user-guide/overview/dir-structure/</loc>
+    <lastmod>2025-11-01T08:52:25+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2023-05-03T22:37:22+01:00</lastmod>
+    <loc>https://bajo.app/docs/user-guide/overview/runtime/</loc>
+    <lastmod>2025-11-01T08:52:46+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://bajo.app/docs/user-guide/configuration/</loc>
+    <lastmod>2025-11-01T07:11:05+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/docs/user-guide/configuration/general/</loc>
+    <lastmod>2025-11-01T07:11:28+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/docs/user-guide/configuration/plugins/</loc>
+    <lastmod>2025-11-01T07:11:49+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/docs/user-guide/configuration/environment/</loc>
+    <lastmod>2025-11-01T07:12:15+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/docs/user-guide/configuration/runtime-override/</loc>
+    <lastmod>2025-11-01T07:15:02+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/docs/user-guide/hook/</loc>
+    <lastmod>2025-11-01T07:25:04+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/docs/user-guide/hook/usage/</loc>
+    <lastmod>2025-11-01T07:25:12+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/docs/user-guide/hook/anatomy/</loc>
+    <lastmod>2025-11-01T07:25:35+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/docs/user-guide/hook/caveats/</loc>
+    <lastmod>2025-11-01T07:25:44+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/docs/dev-guide/</loc>
+    <lastmod>2025-11-01T07:40:07+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/docs/reference/</loc>
+    <lastmod>2025-11-01T07:41:45+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/docs/reference/config/</loc>
+    <lastmod>2025-11-01T07:42:23+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/docs/ecosystem/</loc>
+    <lastmod>2025-11-01T07:45:56+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/docs/contributing/</loc>
+    <lastmod>2025-11-01T07:55:05+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/</loc>
+    <lastmod>2025-11-01T08:52:46+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/docs/</loc>
+    <lastmod>2025-11-01T08:52:46+07:00</lastmod>
+  </url><url>
+    <loc>https://bajo.app/categories/</loc>
+  </url><url>
+    <loc>https://bajo.app/tags/</loc>
   </url>
 </urlset>

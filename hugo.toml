@@ -18,6 +18,8 @@ publishDir = './docs'
         github = "ardhi"
     [params.docs]
         title = "Bajo Documentations"
+        darkMode = true
+        sidebarIcons = true
     [params.footer]
         version = true
         copyright = "Copyright &copy; 2025 by [Ardhi Lukianto](https://github.com/ardhi). All rights reserved."
@@ -32,3 +34,7 @@ publishDir = './docs'
         url = "https://github.com/ardhi/bajo/discussions"
         identifier = "discussions"
         weight = 20
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
