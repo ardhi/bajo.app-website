@@ -1125,6 +1125,36 @@ Sumba Biz Suite Premium Plugins link
                                             <li class="sidebar-dropdown nested  ">
                                                 <button class="btn">
                                                     
+                                                    Overview
+                                                </button>
+                                                <div class="sidebar-submenu ">
+                                                    <ul>
+                                                        
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="https://bajo.app/docs/user-guide/overview/definition/">Definition</a></li>
+                                                            
+                                                        
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="https://bajo.app/docs/user-guide/overview/dir-structure/">Directory Structure</a></li>
+                                                            
+                                                        
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="https://bajo.app/docs/user-guide/overview/runtime/">Runtime</a></li>
+                                                            
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class="sidebar-dropdown nested  ">
+                                                <button class="btn">
+                                                    
                                                     Configuration
                                                 </button>
                                                 <div class="sidebar-submenu ">
@@ -2274,6 +2304,13 @@ Sumba Biz Suite Premium Plugins link
     
     
     
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -2301,6 +2338,15 @@ Sumba Biz Suite Premium Plugins link
     index.add(
             {
                 id:  2 ,
+                href: "\/docs\/user-guide\/overview\/",
+                title: "Overview",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  3 ,
                 href: "\/docs\/user-guide\/overview\/definition\/",
                 title: "Definition",
                 description: "Before we go any further, here are some of the terminologies I use throughout this documentation:\n{app-dir}: The app directory is where you write all your code (your project directory). {data-dir}: The data directory defaults to {app-dir}/data if not specifically stated. Bajo also creates this directory automatically if it doesn’t already exist. {tmp-dir}: The temporary directory defaults to the OS temporary directory. {pkgName}: The plugin’s package name, as it normally appears on an npm listing. {ns}: The plugin name or namespace, which is the camel-cased version of the package name. {mainNs}: The main namespace, a special plugin and directory named main located inside your {app-dir} where you should write all your code. ",
@@ -2309,7 +2355,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  3 ,
+                id:  4 ,
                 href: "\/docs\/user-guide\/overview\/dir-structure\/",
                 title: "Directory Structure",
                 description: "Your typical Bajo app directory structure should look like this:\n|- {app-dir}\r| |- {data-dir}\r| | |- config\r| | | |- .plugin\r| | | |- bajo.json\r| | | |- main.json\r| | | |- ...\r| |- main\r| | |- extend\r| | |- index.js\r| | | ...\r| |- package.json\r| |- index.js\r| | ...\rYou can move {data-dir} out of {app-dir} if you want, but you need to tell Bajo where to find it. For more on this, please follow along. {data-dir} should be the only place Bajo writes anything. Bajo and its plugins should never be allowed to write anything outside {data-dir} on their own. config is a special directory within {data-dir} where your configuration files should reside. Inside this directory, you should find: a special file named .plugins that tells Bajo which plugins should be loaded a file named bajo.json to configure global settings all plugin-specific config files, named after their namespace The main directory, or {mainNs} namespace, is the special plugin where you put your application code. And yes, it is actually a normal Bajo plugin! This means everything in there will be handled just like a regular plugin—it has the ability to extend other plugins, has its own config file, and more — with a few differences: it’s always available and can’t be disabled it’s always the last one to start if this directory is missing, it will be created automatically on startup if the plugin’s factory function is missing (index.js), it will be created dynamically index.js is the main entry point for your app. To set your {data-dir} somewhere else, you need to tell Bajo where to find it by using an argument switch.\n",
@@ -2318,7 +2364,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  4 ,
+                id:  5 ,
                 href: "\/docs\/user-guide\/overview\/runtime\/",
                 title: "Runtime",
                 description: "Bajo should run perfectly fine on Node.js version 20 or higher. Using the latest stable runtime is recommended. Bajo-based apps are also known to run with Bun without any problems.\nBajo is a pure ES6 framework that utilizes dynamic imports a lot. Running on a system with a fast disk (e.g., SSD) and enough RAM is highly recommended, especially when you load a lot of plugins.\n",
@@ -2327,7 +2373,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  5 ,
+                id:  6 ,
                 href: "\/docs\/user-guide\/configuration\/",
                 title: "Configuration",
                 description: "",
@@ -2336,7 +2382,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  6 ,
+                id:  7 ,
                 href: "\/docs\/user-guide\/configuration\/general\/",
                 title: "General Rules",
                 description: " All configuration files must be placed in the {data-dir}/config subfolder. Config files must be named after their plugin namespace. The file format should be either .json or .js. If a .js file is used, it must be in ES6 format and should export either a plain JavaScript object or a function. Both synchronous and asynchronous functions are supported. If it returns a function, this function will be called within its plugin scope and should return a plain JS object. Other formats (.yml, .yaml, and .toml) can also be used by installing and loading the bajoConfig plugin. Other formats (.yml, .yaml and .toml) can also be used by installing \u0026 loading bajoConfig plugin The order of precedence is .js \u003e .json \u003e .yml \u003e .yaml \u003e .toml. This means that if a .js file exists, it will be used instead of a .json file or any other format. Example: bajo.json\n",
@@ -2345,7 +2391,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  7 ,
+                id:  8 ,
                 href: "\/docs\/user-guide\/configuration\/plugins\/",
                 title: "Using Plugins",
                 description: "Plugins are what make the Bajo Framework so great and flexible: they extend app features and functionalities!\nTo use plugins, follow these steps:\nInstall it with npm install {package}, where {package} is the plugin’s package name. You can install as many plugins as you want; for a complete list of plugins, please click here. Optionally, create {data-dir}/config/{ns}.json to customize the plugin’s settings, where {ns} is the namespace or plugin name. Open or create {data-dir}/config/.plugins and list the plugin’s {package} name in it, one per line. For example, the text below will load bajo-config, bajo-extra, and bajo-template:\n",
@@ -2354,7 +2400,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  8 ,
+                id:  9 ,
                 href: "\/docs\/user-guide\/configuration\/environment\/",
                 title: "Environment Support",
                 description: "Configuration file support for different environments is also available. All you need to do is create a {ns}-{env}.json file in your {data-dir}/config, where:\n{ns}: the namespace/plugin name {env}: your desired environment (dev or prod) App-wide settings with bajo-{env}.json are also possible. Bajo is smart enough to select which config file will be used based on the following order of precedence:\nUse {ns}-{env}.json if the file exists. If not, use {ns}.json. If that also doesn’t exist, then use the plugin’s default config values. ",
@@ -2363,7 +2409,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  9 ,
+                id:  10 ,
                 href: "\/docs\/user-guide\/configuration\/runtime-override\/",
                 title: "Runtime Override",
                 description: "You can easily override ANY key-value pair setting with environment variables and program argument switches. Bajo also supports dotenv with a .env file.\nThe order of precedence is: environment variable \u003e argument switches \u003e config files \u003e default, built-in values.\n",
@@ -2372,7 +2418,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  10 ,
+                id:  11 ,
                 href: "\/docs\/user-guide\/hook\/",
                 title: "Hook",
                 description: "",
@@ -2381,7 +2427,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  11 ,
+                id:  12 ,
                 href: "\/docs\/user-guide\/hook\/usage\/",
                 title: "Usage",
                 description: "A hook refers to a mechanism that allows you to inject a custom function to extend Bajo’s functionality at specific points. These points are typically predefined by the framework, providing opportunities to execute code before, during, or after a particular operation.\nIn Bajo, hooks can be created anywhere very easily. Simply call the runHook method followed by the parameters you want to pass.\nThe hook name is always in the form of TNsPairs, while its parameters are a rest parameter. This means you can pass any number of parameters to the function, or none at all.\n",
@@ -2390,7 +2436,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  12 ,
+                id:  13 ,
                 href: "\/docs\/user-guide\/hook\/anatomy\/",
                 title: "Anatomy",
                 description: "Many times, there are more than one handler listening for a particular hook name. Especially in a framework that uses plugins extensively like Bajo, many plugins can listen to one hook at the same time. This creates a problem with call order.\nTo overcome this problem, Bajo gives you the opportunity to set a level. Functions with a lower level will be called earlier. Functions with no level will be assigned level 999 by default.\n",
@@ -2399,7 +2445,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  13 ,
+                id:  14 ,
                 href: "\/docs\/user-guide\/hook\/caveats\/",
                 title: "Caveats",
                 description: "Hooks give you a lot of flexibility and freedom, but you need to be aware of the following caveats:\nYou need to use an asynchronous function. Even if your function is synchronous, it will be called as an asynchronous one—and as you know, there is a performance degradation when using asynchronous operations Stay away from using runHook inside a hook! Even though it’s possible, your code will become unreadable and messy pretty soon. It’s hard to trace errors in a hook. Because of its sequential nature, if a handler that’s called earlier than yours throws an error, your hook won’t be called at all. If you use so many plugins that use the hook system so extensively with so many files, your app’s boot time can take much longer than it’s supposed to. My advice is to use it wisely. Don’t use hooks unless necessary; this will make your app or plugin clean and easy to understand.\n",
@@ -2408,7 +2454,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  14 ,
+                id:  15 ,
                 href: "\/docs\/dev-guide\/",
                 title: "Developer Guide",
                 description: "",
@@ -2417,7 +2463,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  15 ,
+                id:  16 ,
                 href: "\/docs\/reference\/",
                 title: "Reference",
                 description: "",
@@ -2426,7 +2472,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  16 ,
+                id:  17 ,
                 href: "\/docs\/reference\/config\/",
                 title: "Config Object",
                 description: "The following table shows the default app settings. To change these to suit your needs, please refer to Getting Started\nKey Name Type Default Description log object dateFormat string YYYY-MM-DDTHH:MM:ss.SSS[Z] See dayjs string \u0026 format for more info timeTaken boolean false Show time taken from previous activity in ms localDate boolean false Use local date, defaults: UTC pretty boolean false Colorful, pretty styling applet boolean false Show log even in applet mode lang string Auto detected Valid language code e.g: ’en-US’, ‘id’, etc. intl object Internationalization settings supported array ['en-US', 'id'] Supported languages fallback string en-US Language to use if the selected one isn’t valid format object emptyValue string '' Value to use if value is null or undefined datetime object { dateStyle: 'medium', timeStyle: 'short' } See this link for more info date object { dateStyle: 'medium' } See above time object { dateStyle: 'short' } See above float object { maximumFractionDigits: 2 } See above double object { maximumFractionDigits: 5 } See above smallint object {} See above integer object {} See above unitSys object Add new language if necessary. If not specified, value defaults to metric. Accepted values: imperial, metric, nautical en-US string imperial id string metric exitHandler boolean true If false, no graceful shutdown env string dev Acceptable values: dev, or prod ",
@@ -2435,7 +2481,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  17 ,
+                id:  18 ,
                 href: "\/docs\/ecosystem\/",
                 title: "Ecosystem",
                 description: "Bajo Plugins link Package Docs NS Alias Description bajo-cache Docs bajoCache cache Universal Cache bajo-cli Docs bajoCli cli Command Line Tools bajo-common-db Docs bajoCommonDb cdb Common Database bajo-config Docs bajoConfig cdb YAML \u0026 TOML Support bajo-cron Docs bajoCron cron Cron Support bajo-extra Docs bajoExtra extra Extra Booster! bajo-logger Docs bajoLogger log Pino Logger bajo-markdown Docs bajoMarkdown md Markdown Support bajo-queue Docs bajoQueue q Queue System bajo-spatial Docs bajoSpatial spatial Spatial Support bajo-sysinfo Docs bajoSysinfo si System Information bajo-template Docs bajoTemplate tpl Template System Dobo DBMS Plugins link Package Docs NS Alias Description dobo Docs dobo db Dobo DBMS dobo-extra Docs doboExtra dbx Dobo Extra Tools/Utility dobo-couchdb Docs doboCouchdb dbcouch CouchDB Driver dobo-elasticsearch Docs doboElasticsearch dbes Elasticsearch Driver dobo-knex Docs doboKnex dbknex Knex/SQL Driver dobo-mongodb Docs doboMongodb dbmongo MongoDB Driver dobo-redis Docs doboRedis dbredis Redis Driver dobo-restproxy Docs doboRestproxy dbrpx Restproxy Driver dobo-restproxy-jsonserver Docs doboResporoxyJsonserver dbrpxjs JsonServer Support for doboRestproxy dobo-restproxy-ndut Docs doboRestproxyNdut dbrpxndut NDUT Support for doboRestproxy Waibu Web Framework Plugins link Package Docs NS Alias Description waibu Docs waibu w Waibu Web Framework waibu-admin Docs waibuAdmin wa Waibu Admin waibu-alpinejs Docs waibuAlpinejs walp Alpine.js Support waibu-blu Docs waibuBlu wblu Blu theme waibu-bootstrap Docs waibuBootstrap wbs Bootstrap Support waibu-bootstrap-icons Docs waibuBootstrapIcons wbsi Bootstrap Icons Support waibu-bootswatch Docs waibuBootswatch wbw Bootswatch Support waibu-db Docs waibuDb wdb Database helper waibu-extra Docs waibuExtra wx Most used 3rd party libs waibu-maps Docs waibuMaps wmaps Maps Support waibu-mpa Docs waibuMpa wmpa Multi pages app waibu-phosphor Docs waibuPhosphor wpp Phosphoricons Support waibu-rest-api Docs waibuRestApi wra Rest API waibu-static Docs waibuStatic wstatic Static asset waibu-swagger Docs waibuSwagger wswagger Rest API Documentation Masohi Messaging Plugins link Package Docs NS Alias Description masohi Docs masohi masohi Masohi Messaging masohi-codec Docs masohiCodec codec Codec masohi-codec-ais Docs masohiCodecAis codec-ais AIS Codec masohi-mail Docs masohiMail mail Mail Connector masohi-mqtt Docs masohiMqtt mqtt MQTT Connector masohi-serialport Docs masohiSerialport sp Serialport Connector masohi-socket.io Docs masohiSocketIo sio Socket.io Connector Sumba Biz Suite Plugins link Package Docs NS Alias Description sumba Docs sumba sumba Sumba Biz Suite sumba-cms Docs sumbaCms cms Sumba CMS sumba-geonames Docs sumbaGeonames geonames Sumba Geonames sumba-nominatim Docs sumbaNominatim nominatim Sumba OSM Nominatim sumba-oauth Docs sumbaOauth oauth Sumba OAuth Providers Sumba Biz Suite Premium Plugins link Package Docs NS Alias Description @sumba/geofence Docs sumbaGeofence geofence Sumba Geofence @sumba/maps Docs sumbaMaps smaps Sumba Maps @sumba/proxy Docs sumbaProxy proxy Sumba Proxy: Cache any web resources locally @sumba/seatrack Docs sumbaSeatrack seatrack Sumba Seatrack: AIS tracking @sumba/seatrack-global Docs sumbaSeatrackGlobal seatrack-global Sumba Seatrack Global: AIS tracking by Rappid Datahub @sumba/seatrack-vts Docs sumbaSeatrackVts seatrack-vts Sumba Seatrack VTS: VTS Support for Sumba Seatrack @sumba/seatrack-wpi Docs sumbaSeatrackWpi seatrack-wpi Sumba Seatrack WPI: WPI Support for Sumba Seatrack @sumba/skytrack Docs sumbaSkytrack skytrack Sumba Skytrack: ADSB tracking @sumba/skytrack-global Docs sumbaSkytrackGlobal skytrack-global Sumba Skytrack: ADSB tracking by Rappid Datahub @sumba/store Docs sumbaStore store Sumba Store: E-Commerce \u0026 online stores @sumba/subscription Docs sumbaSubscription subs Sumba Subscription: Member subscriptions @sumba/weather Docs sumbaWeather weather Sumba Weather by Rappid Datahub @sumba/webstat Docs sumbaWebstat webstat Sumba Web Statistic ",
@@ -2444,7 +2490,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  18 ,
+                id:  19 ,
                 href: "\/docs\/contributing\/",
                 title: "Contributing",
                 description: "Thanks very much to everyone who wants to join as a contributor, but I have committed to devoting 100% of my time to this project. Therefore, I’m currently unable to accept pull requests from anyone until the project is large enough for me to manage it independently.\nHowever, I am available if you encounter any bugs that require immediate fixes. Please report your issues in a GitHub issue, and I’ll try to address them promptly. I’m also open to criticism and suggestions for improvements or requests for new features.\n",
@@ -2453,7 +2499,7 @@ Sumba Biz Suite Premium Plugins link
         );
     index.add(
             {
-                id:  19 ,
+                id:  20 ,
                 href: "\/docs\/",
                 title: "Docs",
                 description: "",

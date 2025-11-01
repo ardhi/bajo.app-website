@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Overview on Bajo Framework</title>
-    <link>http://localhost:1313/docs/user-guide/overview/</link>
+    <link>https://bajo.app/docs/user-guide/overview/</link>
     <description>Recent content in Overview on Bajo Framework</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 01 Nov 2025 08:52:46 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/docs/user-guide/overview/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bajo.app/docs/user-guide/overview/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Definition</title>
-      <link>http://localhost:1313/docs/user-guide/overview/definition/</link>
+      <link>https://bajo.app/docs/user-guide/overview/definition/</link>
       <pubDate>Sat, 01 Nov 2025 08:52:03 +0700</pubDate>
-      <guid>http://localhost:1313/docs/user-guide/overview/definition/</guid>
+      <guid>https://bajo.app/docs/user-guide/overview/definition/</guid>
       <description>&lt;p&gt;Before we go any further, here are some of the terminologies I use throughout this documentation:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;{app-dir}&lt;/code&gt;: The app directory is where you write all your code (your project directory).&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;{data-dir}&lt;/code&gt;: The data directory defaults to &lt;code&gt;{app-dir}/data&lt;/code&gt; if not specifically stated. Bajo also creates this directory automatically if it doesn&amp;rsquo;t already exist.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;{tmp-dir}&lt;/code&gt;: The temporary directory defaults to the OS temporary directory.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;{pkgName}&lt;/code&gt;: The plugin&amp;rsquo;s package name, as it normally appears on an npm listing.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;{ns}&lt;/code&gt;: The plugin name or namespace, which is the camel-cased version of the package name.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;{mainNs}&lt;/code&gt;: The main namespace, a special plugin and directory named &lt;code&gt;main&lt;/code&gt; located inside your &lt;code&gt;{app-dir}&lt;/code&gt; where you should write all your code.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Directory Structure</title>
-      <link>http://localhost:1313/docs/user-guide/overview/dir-structure/</link>
+      <link>https://bajo.app/docs/user-guide/overview/dir-structure/</link>
       <pubDate>Sat, 01 Nov 2025 08:52:25 +0700</pubDate>
-      <guid>http://localhost:1313/docs/user-guide/overview/dir-structure/</guid>
+      <guid>https://bajo.app/docs/user-guide/overview/dir-structure/</guid>
       <description>&lt;p&gt;Your typical Bajo app directory structure should look like this:&lt;/p&gt;&#xA;&#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;|- {app-dir}&#xD;&#xA;|  |- {data-dir}&#xD;&#xA;|  |  |- config&#xD;&#xA;|  |  |  |- .plugin&#xD;&#xA;|  |  |  |- bajo.json&#xD;&#xA;|  |  |  |- main.json&#xD;&#xA;|  |  |  |- ...&#xD;&#xA;|  |- main&#xD;&#xA;|  |  |- extend&#xD;&#xA;|  |  |- index.js&#xD;&#xA;|  |  |  ...&#xD;&#xA;|  |- package.json&#xD;&#xA;|  |- index.js&#xD;&#xA;|  |  ...&lt;/code&gt;&lt;/pre&gt;&#xD;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;You can move &lt;code&gt;{data-dir}&lt;/code&gt; out of &lt;code&gt;{app-dir}&lt;/code&gt; if you want, but you need to tell Bajo where to find it. For more on this, please follow along.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;{data-dir}&lt;/code&gt; should be the only place Bajo &lt;strong&gt;writes&lt;/strong&gt; anything. Bajo and its plugins should &lt;strong&gt;never&lt;/strong&gt; be allowed to write anything outside &lt;code&gt;{data-dir}&lt;/code&gt; on their own.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;config&lt;/code&gt; is a special directory within &lt;code&gt;{data-dir}&lt;/code&gt; where your configuration files should reside. Inside this directory, you should find:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;a special file named &lt;code&gt;.plugins&lt;/code&gt; that tells Bajo which plugins should be loaded&lt;/li&gt;&#xA;&lt;li&gt;a file named &lt;code&gt;bajo.json&lt;/code&gt; to configure global settings&lt;/li&gt;&#xA;&lt;li&gt;all plugin-specific config files, named after their namespace&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;The &lt;code&gt;main&lt;/code&gt; directory, or &lt;code&gt;{mainNs}&lt;/code&gt; namespace, is the special plugin where you put your application code. And yes, it is actually a normal Bajo plugin! This means everything in there will be handled just like a regular plugin—it has the ability to extend other plugins, has its own config file, and more — with a few differences:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;it&amp;rsquo;s always available and can&amp;rsquo;t be disabled&lt;/li&gt;&#xA;&lt;li&gt;it&amp;rsquo;s always the last one to start&lt;/li&gt;&#xA;&lt;li&gt;if this directory is missing, it will be created automatically on startup&lt;/li&gt;&#xA;&lt;li&gt;if the plugin&amp;rsquo;s factory function is missing (&lt;code&gt;index.js&lt;/code&gt;), it will be created dynamically&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;index.js&lt;/code&gt; is the main entry point for your app.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;To set your &lt;code&gt;{data-dir}&lt;/code&gt; somewhere else, you need to tell Bajo where to find it by using an argument switch.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Runtime</title>
-      <link>http://localhost:1313/docs/user-guide/overview/runtime/</link>
+      <link>https://bajo.app/docs/user-guide/overview/runtime/</link>
       <pubDate>Sat, 01 Nov 2025 08:52:46 +0700</pubDate>
-      <guid>http://localhost:1313/docs/user-guide/overview/runtime/</guid>
-      <description>&lt;p&gt;Bajo should run perfectly fine on Node.js version 20 or higher. Using the latest stable runtime is recommended. Bajo-based apps are also known to run with Bun without any problems.&lt;/p&gt;&#xA;&lt;p&gt;Bajo is a pure ES6 framework that utilizes dynamic imports &lt;code&gt;a lot&lt;/code&gt;. Running on a system with a fast disk (e.g., SSD) and enough RAM is highly recommended, especially when you load a lot of plugins.&lt;/p&gt;</description>
+      <guid>https://bajo.app/docs/user-guide/overview/runtime/</guid>
+      <description>&lt;p&gt;Bajo should run perfectly fine on Node.js version 20 or higher. Using the latest stable runtime is recommended. Bajo-based apps are also known to run with Bun without any problems.&lt;/p&gt;&#xA;&lt;p&gt;Bajo is a pure ES6 framework that utilizes dynamic imports &lt;strong&gt;a lot&lt;/strong&gt;. Running on a system with a fast disk (e.g., SSD) and enough RAM is highly recommended, especially when you load a lot of plugins.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
