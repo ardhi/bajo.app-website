@@ -1,7 +1,7 @@
 ---
 weight: 1000
 title: "Getting Started"
-description: ""
+description: "A quickstart for beginner"
 icon: rocket_launch
 date: "2025-11-01T06:35:52+07:00"
 lastmod: "2025-11-01T06:35:52+07:00"
@@ -13,7 +13,7 @@ author: Ardhi Lukianto
 
 Create a new empty directory named ```my-project```. This will be your app directory throughout this tutorial. Now, ```cd``` into your newly created directory and type:
 
-```bash
+```html
 $ npm init
 ```
 
@@ -21,7 +21,7 @@ You'll be asked to name your project, provide its description, author info, etc.
 
 Then, open it using your favorite editor, edit it, and insert the following lines:
 
-```javascript
+```json {linenos=table,anchorlinenos=true,linenostart=10}
 ...
   "type": "module",
   "bajo": {
@@ -38,7 +38,7 @@ $ npm install bajo
 
 Now, create your app's bootstrap file, ```index.js```, and add these lines:
 
-```javascript
+```javascript {linenos=table,anchorlinenos=true}
 // index.js file
 import bajo from 'bajo'
 await bajo()
@@ -60,7 +60,7 @@ Congratulations! Your Bajo-based app is up and running!
 
 By now, your directory structure should look like this:
 
-```
+```cmd
 |- my-project
 |  |- data
 |  |  |- config
@@ -82,7 +82,7 @@ Now, Bajo will show you a bunch of pretty, colorful logs, including the time eac
 
 But typing program arguments is tedious and boring. Let's use a config file to do some magic. Please create the JSON file ```data/config/bajo.json``` and add these lines to it:
 
-```json
+```json {linenos=table,anchorlinenos=true}
 {
   "env": "dev",
   "log": {
@@ -121,7 +121,7 @@ Please open the ```data/config/main.json``` file or create a new one if it doesn
 
 Enter these lines:
 
-```json
+```json {linenos=table,anchorlinenos=true}
 {
   "firstName": "Tanjiro",
   "lastName": "Kamado",
@@ -139,7 +139,7 @@ Now let's open ```main/index.js``` and update it according to the example below.
 
 This file is the main plugin factory. It gets created automatically if it's not there.
 
-```javascript
+```javascript {linenos=table,anchorlinenos=true}
 async function factory (pkgName) {
   const me = this
 
@@ -181,8 +181,7 @@ But unfortunately, if you run it now, you'll get an error. That's because the ro
 
 That's why we need to fix it first:
 
-```
-...
+```javascript {linenos=table,anchorlinenos=true,linenostart=5,hl_lines=["3-7"]}
     constructor () {
       super(pkgName, me.app)
       this.config = {
@@ -191,7 +190,6 @@ That's why we need to fix it first:
         age: 50
       }
     }
-...
 ```
 
 ```this.config``` defined in the constructor serves as the default config object. During initialization, this will be merged with values from the configuration file. If one or more keys are missing from the configuration file, the related default values are used.
@@ -214,7 +212,7 @@ Bajo offers you a hook system in which you can tap certain actions anywhere in t
 
 First, create ```main/extend/bajo/hook/bajo@after-boot-complete.js```. If you're curious about the reason for the unusual file name, please refer to the *User Guide* on Hook's naming rules.
 
-```javascript
+```javascript {linenos=table,anchorlinenos=true}
 async function afterBootComplete () {
   this.log.info('Hook after boot complete')
 }
@@ -232,8 +230,7 @@ This time, we want to change the property ```lastName``` with hook.
 
 Open ```index.js``` and update it accordingly:
 
-```javascript
-...
+```javascript {linenos=table,anchorlinenos=true,linenostart=10,hl_lines=[2,6]}
     init = async () => {
       const { runHook } = this.app.bajo // add this line
       this.firstName = this.config.firstName
@@ -241,14 +238,13 @@ Open ```index.js``` and update it accordingly:
       this.age = this.config.age
       await runHook('main:myHook') // and this line
     }
-...
 ```
 
 The above code should add a hook named ```main:myHook``` in the initialization step.
 
 Now, create a new file ```main/extend/bajo/hook/main@my-hook.js```:
 
-```javascript
+```javascript {linenos=table,anchorlinenos=true}
 async function myHook () {
   this.lastName = 'THE Daemon Slayer'
 }
@@ -283,7 +279,7 @@ We love YAML format so much so let's use it for our configuration file:
 2. Now, open the ```data/config/.plugins``` file and put ```bajo-config``` in it, line by line. If it doesn't exist yet, create it first. Don't worry about the order; Bajo will figure it out automatically if you have many plugins.
 3. Delete your old configuration file ```data/config/main.json``` and create a new ```data/config/main.yml```. By the way, it doesn't matter whether you use ```.yml``` or ```.yaml```. Both are supported.
 4. Enter the following lines, it should be the same object as before, just in YAML format:
-   ```yaml
+   ```yaml {linenos=table,anchorlinenos=true}
    firstName: Tanjiro
    lastName: Kamado
    age: 15
@@ -354,7 +350,7 @@ $ node index.js -a bajoSysinfo:battery
 
 Bajo has a lot more to offer. Get ready to dive deeper by continuing your journey with Bajo's sub-frameworks:
 
-- [Dobo Database Management System](https://github.com/ardhi/dobo/wiki/GETTING-STARTED.md)
-- [Waibu Web Framework](https://github.com/ardhi/waibu/wiki/GETTING-STARTED.md)
-- [Sumba Biz Suites](https://github.com/ardhi/sumba/wiki/GETTING-STARTED.md)
-- [Masohi Messaging](https://github.com/ardhi/masohi/wiki/GETTING-STARTED.md)
+- [Dobo DBMS](https://dobo.bajo.app/docs/getting-started)
+- [Waibu Web Framework](https://waibu.bajo.app/docs/getting-started)
+- [Sumba Biz Suites](https://sumba.bajo.app/docs/getting-started)
+- [Masohi Messaging](https://masohi.bajo.app/docs/getting-started)

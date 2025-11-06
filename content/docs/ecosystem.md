@@ -1,16 +1,19 @@
 ---
 weight: 5000
 title: "Ecosystem"
-description: ""
 icon: "hub"
 date: "2025-11-01T07:45:56+07:00"
 lastmod: "2025-11-01T07:45:56+07:00"
 draft: false
 toc: true
 ---
+The official plugins listed below are created and maintained by the author. Plugin developers who wish to publish in the Community Plugins section should post a request on this [discussion board](https://github.com/ardhi/bajo/discussions/new?category=community-plugins)
 
-## Bajo Plugins
+## General
 
+General purpose plugins
+
+{{< table "table-striped">}}
 | Package | Docs | NS | Alias | Description |
 | ------- | ---- | -- | ----- | ----------- |
 | [bajo-cache](https://github.com/ardhi/bajo-cache) | [Docs](https://ardhi.github.io/bajo-cache) | bajoCache | cache | Universal Cache |
@@ -25,9 +28,13 @@ toc: true
 | [bajo-spatial](https://github.com/ardhi/bajo-spatial) | [Docs](https://ardhi.github.io/bajo-spatial) | bajoSpatial | spatial | Spatial Support |
 | [bajo-sysinfo](https://github.com/ardhi/bajo-sysinfo) | [Docs](https://ardhi.github.io/bajo-sysinfo) | bajoSysinfo | si | System Information |
 | [bajo-template](https://github.com/ardhi/bajo-template) | [Docs](https://ardhi.github.io/bajo-template) | bajoTemplate | tpl | Template System |
+{{< /table >}}
 
-## Dobo DBMS Plugins
+## Dobo DBMS
 
+Specialized plugins for unified database access, drivers, and connectivity tools
+
+{{< table "table-striped">}}
 | Package | Docs | NS | Alias | Description |
 | ------- | ---- | -- | ----- | ----------- |
 | [dobo](https://github.com/ardhi/dobo) | [Docs](https://ardhi.github.io/dobo) | dobo | db | Dobo DBMS |
@@ -40,9 +47,13 @@ toc: true
 | [dobo-restproxy](https://github.com/ardhi/dobo-restproxy) | [Docs](https://ardhi.github.io/dobo-restproxy) | doboRestproxy | dbrpx | Restproxy Driver |
 | [dobo-restproxy-jsonserver](https://github.com/ardhi/dobo-restproxy-jsonserver) | [Docs](https://ardhi.github.io/dobo-restproxy-jsonserver) | doboResporoxyJsonserver | dbrpxjs |JsonServer Support for doboRestproxy |
 | [dobo-restproxy-ndut](https://github.com/ardhi/dobo-restproxy-ndut) | [Docs](https://ardhi.github.io/dobo-restproxy-ndut) | doboRestproxyNdut | dbrpxndut | NDUT Support for doboRestproxy |
+{{< /table >}}
 
-## Waibu Web Framework Plugins
+## Waibu Web Framework
 
+A web framework built on the Bajo philosophy: modular, extendable, and plug-and-play
+
+{{< table "table-striped">}}
 | Package | Docs | NS | Alias | Description |
 | ------- | ---- | -- | ----- | ----------- |
 | [waibu](https://github.com/ardhi/waibu) | [Docs](https://ardhi.github.io/waibu) | waibu | w |Waibu Web Framework |
@@ -60,9 +71,13 @@ toc: true
 | [waibu-rest-api](https://github.com/ardhi/waibu-rest-api) | [Docs](https://ardhi.github.io/waibu-rest-api) | waibuRestApi | wra | Rest API |
 | [waibu-static](https://github.com/ardhi/waibu-static) | [Docs](https://ardhi.github.io/waibu-static) | waibuStatic | wstatic | Static asset |
 | [waibu-swagger](https://github.com/ardhi/waibu-swagger) | [Docs](https://ardhi.github.io/waibu-swagger) | waibuSwagger | wswagger | Rest API Documentation |
+{{< /table >}}
 
-## Masohi Messaging Plugins
+## Masohi Messaging
 
+Adds true messaging capability to complete the Bajo ecosystem
+
+{{< table "table-striped">}}
 | Package | Docs | NS | Alias | Description |
 | ------- | ---- | -- | ----- | ----------- |
 | [masohi](https://github.com/ardhi/masohi) | [Docs](https://ardhi.github.io/masohi) | masohi | masohi | Masohi Messaging |
@@ -72,9 +87,13 @@ toc: true
 | [masohi-mqtt](https://github.com/ardhi/masohi-mqtt) | [Docs](https://ardhi.github.io/masohi-mqtt) | masohiMqtt | mqtt | MQTT Connector |
 | [masohi-serialport](https://github.com/ardhi/masohi-serialport) | [Docs](https://ardhi.github.io/masohi-serialport) | masohiSerialport | sp | Serialport Connector |
 | [masohi-socket.io](https://github.com/ardhi/masohi-socket.io) | [Docs](https://ardhi.github.io/masohi-socket.io) | masohiSocketIo | sio | Socket.io Connector |
+{{< /table >}}
 
-## Sumba Biz Suite Plugins
+## Sumba Biz Suite
 
+Ready-to-use plugins to extend Bajo's core functionality for enterprise needs
+
+{{< table "table-striped">}}
 | Package | Docs | NS | Alias | Description |
 | ------- | ---- | -- | ----- | ----------- |
 | [sumba](https://github.com/ardhi/sumba) | [Docs](https://ardhi.github.io/sumba) | sumba | sumba | Sumba Biz Suite |
@@ -82,9 +101,13 @@ toc: true
 | [sumba-geonames](https://github.com/ardhi/sumba-geonames) | [Docs](https://ardhi.github.io/sumba-geonames) | sumbaGeonames | geonames | Sumba Geonames |
 | [sumba-nominatim](https://github.com/ardhi/sumba-nominatim) | [Docs](https://ardhi.github.io/sumba-nominatim) | sumbaNominatim | nominatim | Sumba OSM Nominatim |
 | [sumba-oauth](https://github.com/ardhi/sumba-oauth) | [Docs](https://ardhi.github.io/sumba-oauth) | sumbaOauth | oauth | Sumba OAuth Providers |
+{{< /table >}}
 
-## Sumba Biz Suite Premium Plugins
+## Sumba Biz Suite Premium
 
+Exclusive, subscriber-only enterprise plugins for specialized needs
+
+{{< table "table-striped">}}
 | Package | Docs | NS | Alias | Description |
 | ------- | ---- | -- | ----- | ----------- |
 | [@sumba/geofence](https://bajo.app/premium-plugins/sumba-geofence) | [Docs](https://ardhi.github.io/sumba-geofence) | sumbaGeofence | geofence | Sumba Geofence |
@@ -100,3 +123,6 @@ toc: true
 | [@sumba/subscription](https://bajo.app/premium-plugins/sumba-subscription) | [Docs](https://ardhi.github.io/sumba-subscription) | sumbaSubscription | subs | Sumba Subscription: Member subscriptions |
 | [@sumba/weather](https://bajo.app/premium-plugins/sumba-weather) | [Docs](https://ardhi.github.io/sumba-weather) | sumbaWeather | weather | Sumba Weather by Rappid Datahub |
 | [@sumba/webstat](https://bajo.app/premium-plugins/sumba-webstat) | [Docs](https://ardhi.github.io/sumba-webstat) | sumbaWebstat | webstat | Sumba Web Statistic |
+{{< /table >}}
+
+## Community Plugins

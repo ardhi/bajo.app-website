@@ -9,8 +9,9 @@ draft: false
 toc: true
 ---
 
-The following table shows the default app settings. To change these to suit your needs, please refer to [Getting Started](docs/getting-started)
+Default application settings are listed below. For customization instructions, please refer to [Getting Started](docs/getting-started)
 
+{{< table "table-striped">}}
 | Key Name | Type | Default | Description |
 | ------- | ---- | ----- | ----------- |
 | ```log``` | ```object``` | | |
@@ -37,3 +38,4 @@ The following table shows the default app settings. To change these to suit your
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```id``` | ```string``` | ```metric``` | |
 | ```exitHandler``` | ```boolean``` | ```true``` | If ```false```, no graceful shutdown |
 | ```env``` | ```string``` | ```dev``` | Acceptable values: ```dev```, or ```prod``` |
+{{< /table >}}

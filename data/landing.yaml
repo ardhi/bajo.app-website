@@ -59,26 +59,6 @@ imageLauncher:
       href: https://sumba.bajo.app/
 
 
-#featuredLink:
-#  enable: true
-#  weight: 15
-#  template: featured link
-#  title: Sub Framework
-#  col: 3
-#  items:
-#    - title: Dobo DBMS
-#      image: https://ardhi.github.io/dobo/static/logo.png
-#      link: https://dobo.bajo.app/
-#    - title: Waibu Web Framework
-#      image: https://ardhi.github.io/waibu/static/logo.png
-#      link: https://waibu.bajo.app/
-#    - title: Masohi Messaging
-#      image: https://ardhi.github.io/masohi/static/logo.png
-#      link: https://masohi.bajo.app/
-#    - title: Sumba Biz Suite
-#      image: https://ardhi.github.io/sumba/static/logo.png
-#      link: https://sumba.bajo.app/
-
 featureGrid:
   enable: true
   weight: 20

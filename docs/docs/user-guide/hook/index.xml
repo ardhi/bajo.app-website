@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hook on Bajo Framework</title>
-    <link>https://bajo.app/docs/user-guide/hook/</link>
+    <link>http://localhost:1313/docs/user-guide/hook/</link>
     <description>Recent content in Hook on Bajo Framework</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 01 Nov 2025 07:25:44 +0700</lastBuildDate>
-    <atom:link href="https://bajo.app/docs/user-guide/hook/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/docs/user-guide/hook/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Usage</title>
-      <link>https://bajo.app/docs/user-guide/hook/usage/</link>
+      <link>http://localhost:1313/docs/user-guide/hook/usage/</link>
       <pubDate>Sat, 01 Nov 2025 07:25:12 +0700</pubDate>
-      <guid>https://bajo.app/docs/user-guide/hook/usage/</guid>
+      <guid>http://localhost:1313/docs/user-guide/hook/usage/</guid>
       <description>&lt;p&gt;A &lt;strong&gt;hook&lt;/strong&gt; refers to a mechanism that allows you to inject a custom function to extend Bajo&amp;rsquo;s functionality at specific points. These points are typically predefined by the framework, providing opportunities to execute code before, during, or after a particular operation.&lt;/p&gt;&#xA;&lt;p&gt;In Bajo, hooks can be created anywhere very easily. Simply call the &lt;code&gt;runHook&lt;/code&gt; method followed by the parameters you want to pass.&lt;/p&gt;&#xA;&lt;p&gt;The hook name is always in the form of &lt;a href=&#34;global.html#TNsPathPairs&#34;&gt;TNsPairs&lt;/a&gt;, while its parameters are a rest parameter. This means you can pass any number of parameters to the function, or none at all.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Anatomy</title>
-      <link>https://bajo.app/docs/user-guide/hook/anatomy/</link>
+      <link>http://localhost:1313/docs/user-guide/hook/anatomy/</link>
       <pubDate>Sat, 01 Nov 2025 07:25:35 +0700</pubDate>
-      <guid>https://bajo.app/docs/user-guide/hook/anatomy/</guid>
+      <guid>http://localhost:1313/docs/user-guide/hook/anatomy/</guid>
       <description>&lt;p&gt;Many times, there are more than one handler listening for a particular hook name. Especially in a framework that uses plugins extensively like Bajo, many plugins can listen to one hook at the same time. This creates a problem with call order.&lt;/p&gt;&#xA;&lt;p&gt;To overcome this problem, Bajo gives you the opportunity to set a &lt;code&gt;level&lt;/code&gt;. Functions with a lower level will be called earlier. Functions with no level will be assigned level 999 by default.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Caveats</title>
-      <link>https://bajo.app/docs/user-guide/hook/caveats/</link>
+      <link>http://localhost:1313/docs/user-guide/hook/caveats/</link>
       <pubDate>Sat, 01 Nov 2025 07:25:44 +0700</pubDate>
-      <guid>https://bajo.app/docs/user-guide/hook/caveats/</guid>
+      <guid>http://localhost:1313/docs/user-guide/hook/caveats/</guid>
       <description>&lt;p&gt;Hooks give you a lot of flexibility and freedom, but you need to be aware of the following caveats:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;You need to use an &lt;strong&gt;asynchronous&lt;/strong&gt; function. Even if your function is synchronous, it will be called as an asynchronous one—and as you know, there is a performance degradation when using asynchronous operations&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Stay away&lt;/strong&gt; from using &lt;code&gt;runHook&lt;/code&gt; inside a hook! Even though it&amp;rsquo;s possible, your code will become unreadable and messy pretty soon.&lt;/li&gt;&#xA;&lt;li&gt;It&amp;rsquo;s hard to trace errors in a hook. Because of its sequential nature, if a handler that&amp;rsquo;s called earlier than yours throws an error, your hook won&amp;rsquo;t be called at all.&lt;/li&gt;&#xA;&lt;li&gt;If you use so many plugins that use the hook system so extensively with so many files, your app&amp;rsquo;s boot time can take much longer than it&amp;rsquo;s supposed to.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;My advice is to &lt;strong&gt;use it wisely&lt;/strong&gt;. Don&amp;rsquo;t use hooks unless necessary; this will make your app or plugin clean and easy to understand.&lt;/p&gt;</description>
     </item>
   </channel>
