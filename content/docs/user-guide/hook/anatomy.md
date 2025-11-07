@@ -15,7 +15,7 @@ To overcome this problem, Bajo gives you the opportunity to set a ```level```. F
 
 Now, change your ```main@say-hello.js``` file above to export an object instead of a function:
 
-```javascript
+```javascript {linenos=table,anchorlinenos=true}
 const sayHello = {
   level: 10, // <-- will get called early
   handler: async function (...params) {

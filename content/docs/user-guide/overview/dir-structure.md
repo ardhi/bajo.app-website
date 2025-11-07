@@ -12,8 +12,8 @@ toc: true
 Your typical Bajo app directory structure should look like this:
 
 ```
-|- {app-dir}
-|  |- {data-dir}
+|- {appDir}
+|  |- {dataDir}
 |  |  |- config
 |  |  |  |- .plugin
 |  |  |  |- bajo.json
@@ -28,9 +28,9 @@ Your typical Bajo app directory structure should look like this:
 |  |  ...
 ```
 
-- You can move ```{data-dir}``` out of ```{app-dir}``` if you want, but you need to tell Bajo where to find it. For more on this, please follow along.
-- ```{data-dir}``` should be the only place Bajo **writes** anything. Bajo and its plugins should **never** be allowed to write anything outside ```{data-dir}``` on their own.
-- ```config``` is a special directory within ```{data-dir}``` where your configuration files should reside. Inside this directory, you should find:
+- You can move ```{dataDir}``` out of ```{appDir}``` if you want, but you need to tell Bajo where to find it. For more on this, please follow along.
+- ```{dataDir}``` should be the only place Bajo **writes** anything. Bajo and its plugins should **never** be allowed to write anything outside ```{dataDir}``` on their own.
+- ```config``` is a special directory within ```{dataDir}``` where your configuration files should reside. Inside this directory, you should find:
   - a special file named ```.plugins``` that tells Bajo which plugins should be loaded
   - a file named ```bajo.json``` to configure global settings
   - all plugin-specific config files, named after their namespace
@@ -41,7 +41,7 @@ Your typical Bajo app directory structure should look like this:
   - if the plugin's factory function is missing (```index.js```), it will be created dynamically
 - ```index.js``` is the main entry point for your app.
 
-To set your ```{data-dir}``` somewhere else, you need to tell Bajo where to find it by using an argument switch.
+To set your ```{dataDir}``` somewhere else, you need to tell Bajo where to find it by using an argument switch.
 
 Assuming your data directory is ```my-data-dir``` at the same level as your app directory, run your app like this:
 

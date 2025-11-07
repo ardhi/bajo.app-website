@@ -9,11 +9,11 @@ draft: false
 toc: true
 ---
 
-Before we go any further, here are some of the terminologies I use throughout this documentation:
+Before proceeding, familiarize yourself with these terminologies used throughout this documentation:
 
-- ```{app-dir}```: The app directory is where you write all your code (your project directory).
-- ```{data-dir}```: The data directory defaults to ```{app-dir}/data``` if not specifically stated. Bajo also creates this directory automatically if it doesn't already exist.
-- ```{tmp-dir}```: The temporary directory defaults to the OS temporary directory.
-- ```{pkgName}```: The plugin's package name, as it normally appears on an npm listing.
-- ```{ns}```: The plugin name or namespace, which is the camel-cased version of the package name.
-- ```{mainNs}```: The main namespace, a special plugin and directory named ```main``` located inside your ```{app-dir}``` where you should write all your code.
+1. ```{appDir}```: The application's project directory where all your code residese.
+2. ```{dataDir}```: The directory for all data; defaults to ```{appDir}/data``` and is created automatically if missing.
+3. ```{tmpDir}```: The temporary directory, defaults to the OS temporary directory.
+4. ```{pkgName}```: The plugin's package name, typically matching its npm listing.
+5. ```{ns}```: The plugin name or namespace, which is the camel-cased version of the package name.
+6. ```{mainNs}```: The special main namespace and directory named main within your ```{appDir}```; this is where all application code should be written.

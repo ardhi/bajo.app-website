@@ -9,7 +9,7 @@ draft: false
 toc: true
 ---
 
-Configuration file support for different environments is also available. All you need to do is create a ```{ns}-{env}.json``` file in your ```{data-dir}/config```, where:
+Configuration file support for different environments is also available. All you need to do is create a ```{ns}-{env}.json``` file in your ```{dataDir}/config```, where:
 
 - ```{ns}```: the namespace/plugin name
 - ```{env}```: your desired environment (```dev``` or ```prod```)

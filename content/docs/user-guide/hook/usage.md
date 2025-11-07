@@ -17,23 +17,23 @@ The hook name is always in the form of [TNsPairs](global.html#TNsPathPairs), whi
 
 Example:
 
-- In your JavaScript file, add the following code snippet:
+1. In your JavaScript file, add the following code snippet:
 
-  ```javascript
-  const { runHook } = this.app.bajo
-  await runHook('main:sayHello', 'Don', 'Meri', { movie: 'Jumbo', year: 2025 })
-  ````
-- Go to directory ```{app-dir}/main/extend/bajo/hook```. Create one if it doesn't exist yet.
-- Create file ```main@say-hello.js``` in the directory above.
-- Enter these lines:
-  ```javascript
-  async function sayHello (...params) {
-    const [mainChar, friend, payload] = params
-    console.log(mainChar, friend, payload) // output: Don, Meri, { movie: 'Jumbo', year: 2025 }
-  }
+   ```javascript {linenos=table,anchorlinenos=true}
+   const { runHook } = this.app.bajo
+   await runHook('main:sayHello', 'Don', 'Meri', { movie: 'Jumbo', year: 2025 })
+   ````
+2. Go to directory ```{appDir}/main/extend/bajo/hook```. Create one if it doesn't exist yet.
+3. Create file ```main@say-hello.js``` in the directory above.
+4. Enter these lines:
+   ```javascript {linenos=table,anchorlinenos=true}
+   async function sayHello (...params) {
+     const [mainChar, friend, payload] = params
+     console.log(mainChar, friend, payload) // output: Don, Meri, { movie: 'Jumbo', year: 2025 }
+   }
 
-  export default sayHello
-  ```
+   export default sayHello
+   ```
 
 Note the hook name and its associated file name:
 

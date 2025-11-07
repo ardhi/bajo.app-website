@@ -103,9 +103,9 @@ Ready-to-use plugins to extend Bajo's core functionality for enterprise needs
 | [sumba-oauth](https://github.com/ardhi/sumba-oauth) | [Docs](https://ardhi.github.io/sumba-oauth) | sumbaOauth | oauth | Sumba OAuth Providers |
 {{< /table >}}
 
-## Sumba Biz Suite Premium
+### Premium
 
-Exclusive, subscriber-only enterprise plugins for specialized needs
+Exclusive, subscriber-only Sumba Biz Suites plugins for specialized needs
 
 {{< table "table-striped">}}
 | Package | Docs | NS | Alias | Description |
@@ -126,3 +126,10 @@ Exclusive, subscriber-only enterprise plugins for specialized needs
 {{< /table >}}
 
 ## Community Plugins
+
+Plugins created by our community members
+
+{{< table "table-striped">}}
+| Package | Docs | NS | Alias | Description |
+| ------- | ---- | -- | ----- | ----------- |
+{{< /table >}}

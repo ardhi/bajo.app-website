@@ -17,20 +17,22 @@ All values (whether they come from environment variables, argument switches, or 
 
 ### dotenv
 
-- Create or open ```{app-dir}/.env```
-- Use ```__``` (double underscores) as replacement for dots in an object.
-- ```DIR__DATA```: Sets the ```{data-dir}``` data directory.
-- ```DIR__TMP```: Sets ```{tmp-dir}``` temporary directory.
-- For every key in ```{ns|bajo}.json```, use its snake-cased, upper-cased version. For example:
-  - ```env: 'prod'``` → ```ENV=prod```
-  - ```log.dateFormat: 'YYYY-MM-DD'``` → ```LOG__DATE_FORMAT=YYYY-MM-DD```
-  - ```exitHandler: true``` → ```EXIT_HANDLER=true```
-- To override a plugin's config, prepend every key in the plugin's config with the snake-cased, upper-cased version of the namespace followed by a dot. For example:
-  - ```key``` in ```myPlugin``` → ```MY_PLUGIN.KEY=...```
-  - ```key.subKey.subSubKey``` in ```myPlugin``` → ```MY_PLUGIN.KEY__SUB_KEY__SUB_SUB_KEY=...```
+Using dotenv:
+
+1. Create or open ```{appDir}/.env```
+2. Use ```__``` (double underscores) as replacement for dots in an object.
+3. ```DIR__DATA```: Sets the ```{dataDir}``` data directory.
+4. ```DIR__TMP```: Sets ```{tmpDir}``` temporary directory.
+5. For every key in ```{ns|bajo}.json```, use its snake-cased, upper-cased version. For example:
+   - ```env: 'prod'``` → ```ENV=prod```
+   - ```log.dateFormat: 'YYYY-MM-DD'``` → ```LOG__DATE_FORMAT=YYYY-MM-DD```
+   - ```exitHandler: true``` → ```EXIT_HANDLER=true```
+6. To override a plugin's config, prepend every key in the plugin's config with the snake-cased, upper-cased version of the namespace followed by a dot. For example:
+   - ```key``` in ```myPlugin``` → ```MY_PLUGIN.KEY=...```
+   - ```key.subKey.subSubKey``` in ```myPlugin``` → ```MY_PLUGIN.KEY__SUB_KEY__SUB_SUB_KEY=...```
 
 Example:
-```text
+```text {linenos=table,anchorlinenos=true}
 # .env file
 ENV=prod
 LOG__PRETTY=true
@@ -40,17 +42,19 @@ LANG=id
 
 ### Argument Switches
 
-- Use switches, for example: ```node index.js --xxx=one --yyy=two```
-- Use ```-``` as the replacement for dots in an object.
-- ```--dir-data```: Sets the ```{data-dir}``` data directory.
-- ```--dir-tmp```: Sets the ```{tmp-dir}``` temporary directory.
-- For every key in ```{ns|bajo}.json```, add ```--``` prefix. For example:
-  - ```env: 'prod'``` → ```--env=prod```
-  - ```log.dateFormat: 'YYYY-MM-DD'``` → ```--log-dateFormat=YYYY-MM-DD```
-  - ```exitHandler: true``` → ```--exitHandler```
-- To override a plugin's config, prepend every key in the plugin's config with the plugin name followed by a colon ```:```. For example:
-  - ```key``` in ```myPlugin``` → ```--myPlugin:key=...```
-  - ```key.subKey.subSubKey``` in ```myPlugin``` → ```--myPlugin:key-subKey-subSubKey=...```
+Using argument switches:
+
+1. Use switches, for example: ```node index.js --xxx=one --yyy=two```
+2. Use ```-``` as the replacement for dots in an object.
+3. ```--dir-data```: Sets the ```{dataDir}``` data directory.
+4. ```--dir-tmp```: Sets the ```{tmpDir}``` temporary directory.
+5. For every key in ```{ns|bajo}.json```, add ```--``` prefix. For example:
+   - ```env: 'prod'``` → ```--env=prod```
+   - ```log.dateFormat: 'YYYY-MM-DD'``` → ```--log-dateFormat=YYYY-MM-DD```
+   - ```exitHandler: true``` → ```--exitHandler```
+6. To override a plugin's config, prepend every key in the plugin's config with the plugin name followed by a colon ```:```. For example:
+   - ```key``` in ```myPlugin``` → ```--myPlugin:key=...```
+   - ```key.subKey.subSubKey``` in ```myPlugin``` → ```--myPlugin:key-subKey-subSubKey=...```
 
 Example:
 ```bash
