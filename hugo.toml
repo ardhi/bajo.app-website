@@ -27,7 +27,7 @@ publishDir = './docs'
     [params.docsearch]
         appID = "Q05UWNAACY"
         apiKey = "a417a137af5ddd3ab7ef9d66347c89d5"
-        indexName = "Bajo Homepage"
+        indexName = "bajo.app"
     [params.footer]
         version = true
         copyright = "Copyright &copy; 2025 by [Ardhi Lukianto](https://github.com/ardhi). All rights reserved."
