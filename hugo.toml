@@ -23,7 +23,7 @@ publishDir = './docs'
         prism = true
         prismTheme = "lotusdocs"
         descriptions = true
-
+        intLinkTooltip = true
     [params.footer]
         version = true
         copyright = "Copyright &copy; 2025 by [Ardhi Lukianto](https://github.com/ardhi). All rights reserved."

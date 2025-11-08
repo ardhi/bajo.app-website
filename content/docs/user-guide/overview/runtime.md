@@ -9,6 +9,6 @@ draft: false
 toc: true
 ---
 
-Bajo should run perfectly fine on Node.js version 20 or higher. Using the latest stable runtime is recommended. Bajo-based apps are also known to run with **Bun** without any problems.
+Bajo should run perfectly fine on Node.js version 20 or higher. Using the latest stable runtime is recommended. Bajo-based apps are also known to run with **Bun** without any problems. But Bajo **cannot** run on Deno due to its heavy reliance on Node.js-specific libraries and environments.
 
 Bajo is a pure ES6 framework that utilizes dynamic imports **a lot**. Running on a system with a fast disk (e.g., SSD) and enough RAM is highly recommended, especially when you load a lot of plugins.

@@ -60,17 +60,18 @@ Congratulations! Your Bajo-based app is up and running!
 
 By now, your directory structure should look like this:
 
-```cmd
-|- my-project
-|  |- data
-|  |  |- config
-|  |- main
-|  |  |- index.js
-|  |- node_modules
-|  |  |- ...
-|  |- index.js
-|  |- package.json
-|  |- package-lock.json
+```bash
+.
+└── my-project
+    ├── data
+    │   └── config
+    ├── main
+    │   └── index.js
+    ├── node_modules
+    │   └── ...
+    ├── index.js
+    ├── package.json
+    └── package-lock.json
 ```
 Your app runs in the ```dev``` environment by default. In this environment, the log level is set to ```debug```, which can be overridden using program arguments:
 

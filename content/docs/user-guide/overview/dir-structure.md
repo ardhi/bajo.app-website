@@ -12,34 +12,38 @@ toc: true
 Your typical Bajo app directory structure should look like this:
 
 ```
-|- {appDir}
-|  |- {dataDir}
-|  |  |- config
-|  |  |  |- .plugin
-|  |  |  |- bajo.json
-|  |  |  |- main.json
-|  |  |  |- ...
-|  |- main
-|  |  |- extend
-|  |  |- index.js
-|  |  |  ...
-|  |- package.json
-|  |- index.js
-|  |  ...
+.
+└── {appDir}
+    ├── {dataDir}
+    │   ├── config
+    │   │   ├── .plugin
+    │   │   ├── bajo.json
+    │   │   ├── main.json
+    │   │   └── ...
+    │   └── plugins
+    │       └── ...
+    ├── main
+    │   ├── extend
+    │   │   └── ...
+    │   ├── index.js
+    │   └── ...
+    ├── package.json
+    ├── index.js
+    └── ...
 ```
 
-- You can move ```{dataDir}``` out of ```{appDir}``` if you want, but you need to tell Bajo where to find it. For more on this, please follow along.
-- ```{dataDir}``` should be the only place Bajo **writes** anything. Bajo and its plugins should **never** be allowed to write anything outside ```{dataDir}``` on their own.
-- ```config``` is a special directory within ```{dataDir}``` where your configuration files should reside. Inside this directory, you should find:
-  - a special file named ```.plugins``` that tells Bajo which plugins should be loaded
-  - a file named ```bajo.json``` to configure global settings
-  - all plugin-specific config files, named after their namespace
-- The ```main``` directory, or ```{mainNs}``` namespace, is the special plugin where you put your application code. And yes, it is actually a normal Bajo plugin! This means everything in there will be handled just like a regular plugin—it has the ability to extend other plugins, has its own config file, and more — with a few differences:
-  - it's always available and can't be disabled
-  - it's always the last one to start
-  - if this directory is missing, it will be created automatically on startup
-  - if the plugin's factory function is missing (```index.js```), it will be created dynamically
-- ```index.js``` is the main entry point for your app.
+1. You can move ```{dataDir}``` out of ```{appDir}``` if you want, but you need to tell Bajo where to find it. For more on this, please follow along.
+2. ```{dataDir}``` should be the only place Bajo **writes** anything. Bajo and its plugins should **never** be allowed to write anything outside ```{dataDir}``` on their own.
+3. ```config``` is a special directory within ```{dataDir}``` where your configuration files should reside. Inside this directory, you should find:
+   - a special file named ```.plugins``` that tells Bajo which plugins should be loaded
+   - a file named ```bajo.json``` to configure global settings
+   - all plugin-specific config files, named after their namespace
+4. The ```main``` directory, or ```{mainNs}``` namespace, is the special plugin where you put your application code. And yes, it is actually a normal Bajo plugin! This means everything in there will be handled just like a regular plugin—it has the ability to extend other plugins, has its own config file, and more — with a few differences:
+   - it's always available and can't be disabled
+   - it's always the last one to start
+   - if this directory is missing, it will be created automatically on startup
+   - if the plugin's factory function is missing (```index.js```), it will be created dynamically
+5. ```index.js``` is the main entry point for your app.
 
 To set your ```{dataDir}``` somewhere else, you need to tell Bajo where to find it by using an argument switch.
 

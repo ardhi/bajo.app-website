@@ -7,7 +7,7 @@ lastmod: "2025-11-01T07:45:56+07:00"
 draft: false
 toc: true
 ---
-The official plugins listed below are created and maintained by the author. Plugin developers who wish to publish in the Community Plugins section should post a request on this [discussion board](https://github.com/ardhi/bajo/discussions/new?category=community-plugins)
+The official plugins listed below are created and maintained by me, the author. Plugin developers who wish to publish in the Community Plugins section should post a request on this [discussion board](https://github.com/ardhi/bajo/discussions/new?category=community-plugins)
 
 ## General
 

@@ -13,7 +13,7 @@ A **hook** refers to a mechanism that allows you to inject a custom function to 
 
 In Bajo, hooks can be created anywhere very easily. Simply call the ```runHook``` method followed by the parameters you want to pass.
 
-The hook name is always in the form of [TNsPairs](global.html#TNsPathPairs), while its parameters are a rest parameter. This means you can pass any number of parameters to the function, or none at all.
+The hook name is always in the form of [TNsPathPairs](https://ardhi.github.io/bajo/global.html#TNsPathPairs), while its parameters are a rest parameter. This means you can pass any number of parameters to the function, or none at all.
 
 Example:
 

@@ -13,7 +13,7 @@ Plugins are what make the Bajo Framework so great and flexible: they extend app 
 
 To use plugins, follow these steps:
 
-1. Install it with ```npm install {pkgName}```, where ```{pkgName}``` is the plugin's package name. You can install as many plugins as you want; for a complete list of plugins, please [click here](ecosystem.md).
+1. Install it with ```npm install {pkgName}```, where ```{pkgName}``` is the plugin's package name. You can install as many plugins as you want; for a complete list of plugins, please [click here](/docs/ecosystem.md).
 2. Optionally, create ```{dataDir}/config/{ns}.json``` to customize the plugin's settings, where ```{ns}``` is the namespace or plugin name.
 3. Open or create ```{dataDir}/config/.plugins``` and list the plugin's ```{pkgName}``` name in it, one per line.
 
