@@ -9,13 +9,30 @@ draft: false
 toc: true
 author: Ardhi Lukianto
 ---
+This is the quickstart guide for getting started with Bajo, a framework for building robust and scalable applications. This section covers essential steps for beginners, including installation, setting up your project structure, and understanding basic configurations. You will be introduced to the core concepts of Bajo's plugin system and lifecycle, learning how to build your first "Hello World!" application and utilize the powerful hook system for custom extensions. This foundation will prepare you to dive into Bajo's specialized sub-frameworks, such as Dobo and Waibu, to further develop your application's capabilities.
+
+Bajo should run perfectly fine on Node.js version 20 or higher. If you don't have it on your system, please [download](https://nodejs.org/en/download) and install it first.
+
+{{% alert context="success" %}}
+Bajo-based apps are also known to run with **Bun** without any problems. But Bajo **cannot** run on Deno due to its heavy reliance on Node.js-specific libraries and environments
+{{% /alert %}}
+
 ## Installation
 
 Create a new empty directory named ```my-project```. This will be your app directory throughout this tutorial. Now, ```cd``` into your newly created directory and type:
 
-```html
+{{< tabs tabTotal="2" >}}
+{{% tab tabName="NPM" %}}
+```bash
 $ npm init
 ```
+{{% /tab %}}
+{{% tab tabName="YARN" %}}
+```bash
+$ yarn init
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 You'll be asked to name your project, provide its description, author info, etc. Please continue until the *package.json* file is created.
 
@@ -32,9 +49,19 @@ Then, open it using your favorite editor, edit it, and insert the following line
 
 After completing these steps, install Bajo by running:
 
+{{< tabs tabTotal="2" >}}
+{{% tab tabName="NPM" %}}
 ```bash
 $ npm install bajo
 ```
+{{% /tab %}}
+{{% tab tabName="YARN" %}}
+```bash
+$ yarn add bajo
+```
+{{% /tab %}}
+{{< /tabs >}}
+
 
 Now, create your app's bootstrap file, ```index.js```, and add these lines:
 
@@ -50,9 +77,18 @@ Bajo will also automatically create the ```main``` directory to serve as your ma
 
 Now, run your app:
 
+{{< tabs tabTotal="2" >}}
+{{% tab tabName="NODE" %}}
 ```bash
 $ node index.js
 ```
+{{% /tab %}}
+{{% tab tabName="BUN" %}}
+```bash
+$ bun index.js
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Congratulations! Your Bajo-based app is up and running!
 
@@ -75,9 +111,19 @@ By now, your directory structure should look like this:
 ```
 Your app runs in the ```dev``` environment by default. In this environment, the log level is set to ```debug```, which can be overridden using program arguments:
 
+{{< tabs tabTotal="2" >}}
+{{% tab tabName="NODE" %}}
 ```bash
 $ node index.js --log-level=trace --log-timeTaken --log-pretty
 ```
+{{% /tab %}}
+{{% tab tabName="BUN" %}}
+```bash
+$ bun index.js --log-level=trace --log-timeTaken --log-pretty
+```
+{{% /tab %}}
+{{< /tabs >}}
+
 
 Now, Bajo will show you a bunch of pretty, colorful logs, including the time each step took. This is very useful for debugging and for finding out which activity takes the most time.
 
@@ -96,9 +142,18 @@ But typing program arguments is tedious and boring. Let's use a config file to d
 
 Now, try simply running your app without any arguments:
 
+{{< tabs tabTotal="2" >}}
+{{% tab tabName="NODE" %}}
 ```bash
 $ node index.js
 ```
+{{% /tab %}}
+{{% tab tabName="BUN" %}}
+```bash
+$ bun index.js
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Much better! And hassle-free!
 
@@ -109,10 +164,10 @@ You can mix and match config file and program arguments on any key-value pairs a
 Let's start with **Hello World!**, the Bajo way.
 
 The objectives of this short course are:
-- reading values ​​from the configuration
-- copying those values ​​into properties in the main plugin during initialization
-- displaying values ​​while the program is running
-- notifying if the program terminates
+1. reading values ​​from the configuration
+2. copying those values ​​into properties in the main plugin during initialization
+3. displaying values ​​while the program is running
+4. notifying if the program terminates
 
 Let's go!
 
@@ -130,9 +185,11 @@ Enter these lines:
 }
 ```
 
-Each Bajo plugin can be configured through the configuration file located at ```{dataDir}/config/{ns}.json```, where ```{dataDir}``` is the data directory location and ```{ns}``` is the namespace or plugin name. Please visit *Getting Started* for more info.
+Each Bajo plugin can be configured through the configuration file located at ```{dataDir}/config/{ns}.json```, where ```{dataDir}``` is the data directory location and ```{ns}``` is the namespace or plugin name. Please visit [this page](/docs/user-guide/overview/definition/) for more info.
 
-As you may know now, in Bajo, you create everything through plugins. If your project is small or not very complicated, you can use the main plugin that's always ready and available. But over time, as your app gets bigger and bigger, you'll need to start thinking about breaking things into small pieces through independent plugins.
+As you may know now, in Bajo, you create everything through plugins. If your project is small or not very complicated, you can use the main plugin that's always ready and available. But over time, as your app gets bigger and bigger, you'll need to start thinking about breaking things into small pieces through independent plugins. 
+
+If you intend to create your own customized plugin, refer to the [Developer Guide](/docs/dev-guide/).
 
 ### Plugin Factory
 
@@ -197,11 +254,22 @@ That's why we need to fix it first:
 
 If you run this now, you'll get a bunch of logs. Let's filter it with:
 
+{{< tabs tabTotal="2" >}}
+{{% tab tabName="NODE" %}}
 ```bash
 $ node index.js --log-level=info
 2025-09-12T00:09:38.946Z +97ms INFO: main First name: Tanjiro, Last name: Kamado, age: 15
 2025-09-12T00:09:38.949Z +3ms WARN: main Program aborted
 ```
+{{% /tab %}}
+{{% tab tabName="BUN" %}}
+```bash
+$ bun index.js --log-level=info
+2025-09-12T00:09:38.946Z +97ms INFO: main First name: Tanjiro, Last name: Kamado, age: 15
+2025-09-12T00:09:38.949Z +3ms WARN: main Program aborted
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Sweet!
 
@@ -211,7 +279,7 @@ Sweet!
 
 Bajo offers you a hook system in which you can tap certain actions anywhere in the system with your own code. Let's go through the simplest one: running your code just after the boot process is completed.
 
-First, create ```main/extend/bajo/hook/bajo@after-boot-complete.js```. If you're curious about the reason for the unusual file name, please refer to the *User Guide* on Hook's naming rules.
+First, create ```main/extend/bajo/hook/bajo@after-boot-complete.js```. If you're curious about the reason for the unusual file name, please refer to the [User Guide](/docs/user-guide/hook/usage/) on Hook's naming rules.
 
 ```javascript {linenos=table,anchorlinenos=true}
 async function afterBootComplete () {
@@ -271,21 +339,34 @@ In this series, we'll learn how to use such plugins to extend our app.
 
 ### File Format
 
-We love YAML format so much so let's use it for our configuration file:
+We love YAML format so much so let's use it for our configuration file: YAML support is part of the ```bajo-config``` plugin, so we need to install it first
 
-1. YAML support is part of the ```bajo-config``` plugin, so we need to install it first
-   ```bash
-   $ npm install bajo-config
-   ```
-2. Now, open the ```data/config/.plugins``` file and put ```bajo-config``` in it, line by line. If it doesn't exist yet, create it first. Don't worry about the order; Bajo will figure it out automatically if you have many plugins.
-3. Delete your old configuration file ```data/config/main.json``` and create a new ```data/config/main.yml```. By the way, it doesn't matter whether you use ```.yml``` or ```.yaml```. Both are supported.
-4. Enter the following lines, it should be the same object as before, just in YAML format:
-   ```yaml {linenos=table,anchorlinenos=true}
-   firstName: Tanjiro
-   lastName: Kamado
-   age: 15
-   ```
-5. Run and check the output. It should be the exact same output as before, except for the log's timestamps.
+{{< tabs tabTotal="2" >}}
+{{% tab tabName="NPM" %}}
+```bash
+$ npm install bajo-config
+```
+{{% /tab %}}
+{{% tab tabName="YARN" %}}
+```bash
+$ yarn add bajo-config
+```
+{{% /tab %}}
+{{< /tabs >}}
+
+Now, open the ```data/config/.plugins``` file and put ```bajo-config``` in it, line by line. If it doesn't exist yet, create it first. Don't worry about the order; Bajo will figure it out automatically if you have many plugins.
+
+Delete your old configuration file ```data/config/main.json``` and create a new ```data/config/main.yml```. By the way, it doesn't matter whether you use ```.yml``` or ```.yaml```. Both are supported.
+
+And now enter the following lines, it should be the same object as before, just in YAML format:
+
+```yaml {linenos=table,anchorlinenos=true}
+firstName: Tanjiro
+lastName: Kamado
+age: 15
+```
+
+Run and check the output. It should be the exact same output as before, except for the log's timestamps.
 
 ### Applet Mode
 
@@ -293,15 +374,33 @@ We love YAML format so much so let's use it for our configuration file:
 
 You can run Bajo in applet mode by using the ```--applet``` or ```-a``` switches:
 
+{{< tabs tabTotal="2" >}}
+{{% tab tabName="NODE" %}}
 ```bash
 $ node index.js -a
 ```
+{{% /tab %}}
+{{% tab tabName="BUN" %}}
+```bash
+$ bun index.js -a
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 But applet mode requires you to install ```bajo-cli``` beforehand. So, please install it first:
 
+{{< tabs tabTotal="2" >}}
+{{% tab tabName="NPM" %}}
 ```bash
 $ npm install bajo-cli
 ```
+{{% /tab %}}
+{{% tab tabName="YARN" %}}
+```bash
+$ yarn add bajo-cli
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 Don't forget to add ```bajo-cli``` to the ```data/config/.plugins``` file. Again, the order doesn't really matter here.
 
@@ -329,6 +428,9 @@ Let's install one more plugin: ```bajo-sysinfo```. This plugin is a thin wrapper
 
 If you try to run your app as shown below (yes, you can have a value for the applet switch; for more details, please [see here](https://github.com/ardhi/bajo-cli)), you'll see something like this after the loading spinner stops:
 
+
+{{< tabs tabTotal="2" >}}
+{{% tab tabName="NODE" %}}
 ```bash
 $ node index.js -a bajoSysinfo:battery
 ℹ App runs in applet mode
@@ -346,6 +448,27 @@ $ node index.js -a bajoSysinfo:battery
 ├──────────────────┼─────────────────────┤
 ...
 ```
+{{% /tab %}}
+{{% tab tabName="BUN" %}}
+```bash
+$ bun index.js -a bajoSysinfo:battery
+ℹ App runs in applet mode
+ℹ Done!
+┌──────────────────┬─────────────────────┐
+│ hasBattery       │ true                │
+├──────────────────┼─────────────────────┤
+│ cycleCount       │ 0                   │
+├──────────────────┼─────────────────────┤
+│ isCharging       │ true                │
+├──────────────────┼─────────────────────┤
+│ designedCapacity │ 61998               │
+├──────────────────┼─────────────────────┤
+│ maxCapacity      │ 51686               │
+├──────────────────┼─────────────────────┤
+...
+```
+{{% /tab %}}
+{{< /tabs >}}
 
 ## More
 
