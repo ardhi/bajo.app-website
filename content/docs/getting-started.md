@@ -185,7 +185,7 @@ Enter these lines:
 }
 ```
 
-Each Bajo plugin can be configured through the configuration file located at ```{dataDir}/config/{ns}.json```, where ```{dataDir}``` is the data directory location and ```{ns}``` is the namespace or plugin name. Please visit [this page](/docs/user-guide/overview/definition/) for more info.
+Each Bajo plugin can be configured through the configuration file located at ```{dataDir}/config/{ns}.json```, where ```{dataDir}``` is the data directory location and ```{ns}``` is the namespace or plugin name. Please visit [this page](/docs/user-guide/overview/#terminology) for more info.
 
 As you may know now, in Bajo, you create everything through plugins. If your project is small or not very complicated, you can use the main plugin that's always ready and available. But over time, as your app gets bigger and bigger, you'll need to start thinking about breaking things into small pieces through independent plugins. 
 
@@ -279,7 +279,7 @@ Sweet!
 
 Bajo offers you a hook system in which you can tap certain actions anywhere in the system with your own code. Let's go through the simplest one: running your code just after the boot process is completed.
 
-First, create ```main/extend/bajo/hook/bajo@after-boot-complete.js```. If you're curious about the reason for the unusual file name, please refer to the [User Guide](/docs/user-guide/hook/usage/) on Hook's naming rules.
+First, create ```main/extend/bajo/hook/bajo@after-boot-complete.js```. If you're curious about the reason for the unusual file name, please refer to the [User Guide](/docs/user-guide/hook/#usage) on Hook's naming rules.
 
 ```javascript {linenos=table,anchorlinenos=true}
 async function afterBootComplete () {

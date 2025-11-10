@@ -1,6 +1,7 @@
 ---
 weight: 5000
 title: "Ecosystem"
+description: "Official and community plugins"
 icon: "hub"
 date: "2025-11-01T07:45:56+07:00"
 lastmod: "2025-11-01T07:45:56+07:00"

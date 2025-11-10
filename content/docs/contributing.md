@@ -1,7 +1,7 @@
 ---
 weight: 6000
 title: "Contributing"
-description: ""
+description: "How to contribute to Bajo"
 icon: "heart_plus"
 date: "2025-11-01T07:55:05+07:00"
 lastmod: "2025-11-01T07:55:05+07:00"

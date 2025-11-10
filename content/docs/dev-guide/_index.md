@@ -1,7 +1,7 @@
 ---
 weight: 3000
 title: "Developer Guide"
-description: ""
+description: "System architecture and plugin development"
 icon: "construction"
 date: "2025-11-01T07:40:07+07:00"
 lastmod: "2025-11-01T07:40:07+07:00"

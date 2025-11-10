@@ -1,7 +1,7 @@
 ---
 weight: 2000
 title: "User Guide"
-description: ""
+description: "In-depth information about features & functionalities"
 icon: "menu_book"
 date: "2025-11-01T06:59:09+07:00"
 lastmod: "2025-11-01T06:59:09+07:00"
